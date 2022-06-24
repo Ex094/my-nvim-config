@@ -1,7 +1,6 @@
 syntax on
 set clipboard=unnamedplus " Enables the clipboard between Vim/Neovim and other applications.
 set completeopt=noinsert,menuone,noselect " Modifies the auto-complete menu to behave more like an IDE.
-set cursorline " Highlights the current line in the editor
 set hidden " Hide unused buffers
 set autoindent " Indent a new line
 set mouse=a " Allow to use the mouse in the editor
@@ -12,7 +11,8 @@ set wildmenu " Show a more advance menu
 filetype plugin indent on   " Allow auto-indenting depending on file type
 set spell " enable spell check (may need to download language package)
 set ttyfast " Speed up scrolling in Vim
-
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
 " Ignore Folders from indexing/searching
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/node_modules
 
@@ -35,12 +35,21 @@ Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-commentary'
+Plug 'Yggdroot/indentLine'
+
+" vuejs
+Plug 'posva/vim-vue'
+Plug 'leafOfTree/vim-vue-plugin'
+
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Initialize plugin system
 call plug#end()
 
+" Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
 
-" colorscheme gruvbox
+colorscheme gruvbox
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 let g:bargreybars_auto=0
@@ -60,7 +69,7 @@ let g:move_key_modifier = 'C'
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.vuejs,*.js'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
