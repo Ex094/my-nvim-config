@@ -38,6 +38,9 @@ Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 
+" NerdTree
+nmap <F6> :NERDTreeFind<CR>
+
 " vuejs
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
@@ -69,7 +72,7 @@ let g:move_key_modifier = 'C'
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.vuejs,*.js'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.vue,*.js'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
